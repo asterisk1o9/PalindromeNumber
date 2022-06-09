@@ -6,9 +6,19 @@
 //
 
 #include <iostream>
+#include "method.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    method testObj;
+    
+    int x = 112211;
+    
+    //testObj.convertX(x);
+    cout << "\n";
+    testObj.isPalindrome(x);
+    cout << "\n";
+
     return 0;
 }
