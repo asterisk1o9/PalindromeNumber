@@ -30,26 +30,28 @@ void method::print(){
 bool method::isPalindrome(int x){
     convertX(x);
     print();
+    bool a = true;
 
     auto beg = nums.begin();
     //auto midUp = nums.begin() + (nums.size() / 2);
     //auto midDown = nums.begin() + (nums.size() / 2);
-    auto end = nums.end() -1;
+    auto end = nums.end();
     
     if(nums.size() %2 ==0){
-        for(auto midUp = nums.begin() + (nums.size() / 2), midDown = nums.begin() + ((nums.size() / 2)-1); midUp != end || midDown == beg; midUp++, midDown--){
+        for(auto midUp = nums.begin() + (nums.size() / 2), midDown = nums.begin() + ((nums.size() / 2)-1); midUp != end; midUp++, midDown--){
             cout << "Left value is " << *midDown << " and right value is " << *midUp << "\n";
             if(*midUp != *midDown){
                 cout << "No palindrome";
-                break;
+                a = false;
             }
         }
     }
-    else{
-        cout << "Palindrome";
+    
+    if(a){
+        cout << "You have a palindrome";
     }
     
-    return false;
+    return a;
 }
 
 
